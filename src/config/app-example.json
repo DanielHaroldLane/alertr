@@ -9,5 +9,6 @@
   },
   "discordWebHook": "{{YOUR_DISCORD_WEBHOOK}}",
   "discordChannelId": "{{YOUR_DISCORD_CHANNEL_ID",
-  "cacheFile": ".cache"
+  "cacheFile": ".cache",
+  "logFile": "alertr.log"
 }

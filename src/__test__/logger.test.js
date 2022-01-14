@@ -1,7 +1,12 @@
+require('fs')
+
 const consoleInfoMock = jest.spyOn(global.console, 'info').mockImplementation()
 const isoStringMock = '__MOCKED_DATE_TIME__'
 jest.spyOn(Date.prototype, 'toISOString').mockReturnValue(isoStringMock)
 const logger = require('../logger')
+jest.mock('fs', () => ({
+  promises: { appendFile: jest.fn() },
+}))
 
 describe('logger', () => {
   afterAll(() => {

@@ -59,6 +59,8 @@ const getHandler = async (request, response) => {
       break
     default:
       logger.warn('Unrecognised event received', query)
+      response.writeHead(500, { 'Content-Type': 'text/plain' })
+      response.end()
       return
   }
   emit(query['hub.mode'], query)
@@ -104,6 +106,8 @@ const startHandler = (topics) => {
     const callbackUrl = `http://${publicIp}:${port}`
     logger.info(`AlertR listening on ${callbackUrl}.`)
 
+    // we don't care about awaiting here, we just want to fire off subscription requests
+    // as fast as we can.
     topics.forEach((topic) => {
       logger.info(`Subscribing to topic: ${topic}.`)
       subscribe(topic, callbackUrl)

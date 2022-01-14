@@ -1,3 +1,5 @@
 coverage
 src/config/app.json
 node_modules
+alertr.log
+.cache

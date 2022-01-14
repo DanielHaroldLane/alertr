@@ -1,9 +1,16 @@
-const logger = (log) => (message, data) => {
+const { promises: fs } = require('fs')
+const util = require('util')
+const { logFile } = require('./config/app.json')
+
+const logger = (log) => async (message, data) => {
   const timestamp = new Date().toISOString()
+  const messageLog = `[${timestamp}] ${message}`
   if (!data) {
-    log(`[${timestamp}] ${message}`)
+    log(messageLog)
+    await fs.appendFile(logFile, util.format(messageLog) + '\n')
   } else {
-    log(`[${timestamp}] ${message}`, data)
+    log(messageLog, data)
+    await fs.appendFile(logFile, util.format(messageLog, data) + '\n')
   }
 }
 

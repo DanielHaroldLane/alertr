@@ -20,11 +20,14 @@ const feedHandler = async (data) => {
   const dateTime = new Date().toISOString()
   const href = data?.feed?.entry?.link?.href
 
-  if (!cache.exists(cacheFile)) {
-    cache.create(cacheFile)
+  const cacheExists = await cache.exists(cacheFile)
+
+  if (!cacheExists) {
+    await cache.create(cacheFile)
   }
 
-  if (cache.contains(href)) {
+  const cacheContainsHref = await cache.contains(href)
+  if (cacheContainsHref) {
     logger.info(`Cache contains ${href} - skipping Discord notification`)
     return
   }
