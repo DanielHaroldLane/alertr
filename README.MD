@@ -4,6 +4,8 @@ This Node.JS server will alert a Discord server webhook whenever it receives a p
 
 In other words whenever new content is uploaded to a YouTube channel that you're interested in, this application will post it to a Discord channel via a WebHook.
 
+![AlertR in action](images/discord.png "AlertR Example")
+
 ## Config
 
 Config is contained in the `src/config` directory. Create a copy of the example file and rename it to `app.json` providing all the values it requires.
