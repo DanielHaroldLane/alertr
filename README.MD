@@ -13,14 +13,32 @@ Config is contained in the `src/config` directory. Create a copy of the example 
 ## Installation
 Install [nvm](https://github.com/nvm-sh/nvm)
 
-In a terminal at the project root run `nvm install v14 && nvm use`
+In a terminal at the project root run 
 
-Yarn is used in this project for package management so next run `npm i yarn -g` to install yarn globally for v14 of node.
+`$ nvm install v14 && nvm use`
 
-Finally, install project dependencies by running `yarn`
+Yarn is used in this project for package management so next run 
+
+`$ npm i yarn -g`
+
+Next install the project dependencies by running 
+
+`$ yarn`
+
+Give the index file execute permissions.
+
+ `$ chmod u+x src/index.js`
 ## Testing
 
-Tests can be executed with `yarn test`
+Tests can be executed with 
+
+`$ yarn test`
 
 ## Usage
-`yarn start`
+To start using yarn 
+
+`$ yarn start`
+
+Alternatively
+
+`$ src/index.js`

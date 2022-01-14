@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const axios = require('axios')
 const cache = require('./cache')
 const logger = require('./logger')
