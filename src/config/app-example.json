@@ -1,0 +1,13 @@
+{
+  "topics": [
+    "https://www.youtube.com/xml/feeds/videos.xml?channel_id={{YOUTUBE_CHANNEL_ID_1",
+    "https://www.youtube.com/xml/feeds/videos.xml?channel_id={{YOUTUBE_CHANNEL_ID_2"
+  ],
+  "hub": "https://pubsubhubbub.appspot.com/subscribe",
+  "server": {
+    "port": 1337
+  },
+  "discordWebHook": "{{YOUR_DISCORD_WEBHOOK}}",
+  "discordChannelId": "{{YOUR_DISCORD_CHANNEL_ID",
+  "cacheFile": ".cache"
+}
